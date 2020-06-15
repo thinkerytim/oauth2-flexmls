@@ -1,4 +1,4 @@
-# FlexMLS Provider for OAuth 2.0 Client
+# FlexMLS Provider for PHP League OAuth 2.0 Client
 ![PHP Composer](https://github.com/thinkerytim/oauth2-flexmls/workflows/PHP%20Composer/badge.svg)
 
 This package provides FlexMLS OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
