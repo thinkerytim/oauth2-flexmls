@@ -64,8 +64,8 @@ if (!isset($_GET['code'])) {
     var_dump(
         $resourceOwner->getId(),
         $resourceOwner->getName(),
-        $resourceOwner->getPostalCode(),
-        $resourceOwner->getEmail(),
+        $resourceOwner->getPrimaryEmail(),
+        $resourceOwner->OfficeMlsId, // this is using the _get magic method
         $resourceOwner->toArray()
     );
 }
