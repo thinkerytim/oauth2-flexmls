@@ -23,7 +23,21 @@ class FlexMLSResourceOwner implements ResourceOwnerInterface
      */
     public function __construct(array $response = array())
     {
-        $this->response = $response;
+        $this->response = $response['D']['Results'][0];
+    }
+
+    /**
+     * Magic method to get any arbitrary key
+     * @param string $name
+     * @return mixed|null
+     */
+    public function __get(string $name)
+    {
+        if (array_key_exists($name, $this->response)) {
+            return $this->response[$name];
+        }
+
+        return null;
     }
 
     /**
@@ -33,7 +47,7 @@ class FlexMLSResourceOwner implements ResourceOwnerInterface
      */
     public function getId()
     {
-        return $this->getValueByKey($this->response, 'user_id');
+        return $this->getValueByKey($this->response, 'Id');
     }
 
     /**
@@ -43,27 +57,42 @@ class FlexMLSResourceOwner implements ResourceOwnerInterface
      */
     public function getName()
     {
-        return $this->getValueByKey($this->response, 'name');
+        return $this->getValueByKey($this->response, 'Name');
     }
 
     /**
-     * Get resource owner postal code
+     * Get resource company name
      *
      * @return string|null
      */
-    public function getPostalCode()
+    public function getCompany()
     {
-        return $this->getValueByKey($this->response, 'postal_code');
+        return $this->getValueByKey($this->response, 'Company');
     }
 
     /**
-     * Get resource owner email
+     * Get resource active state
+     *
+     * @return boolean
+     */
+    public function isActive() : bool
+    {
+        return $this->getValueByKey($this->response, 'Active');
+    }
+
+    /**
+     * Get resource owner primary email
      *
      * @return string|null
      */
-    public function getEmail()
+    public function getPrimaryEmail()
     {
-        return $this->getValueByKey($this->response, 'email');
+        foreach ($this->response['Emails'] as $email) {
+            if ($email['Primary']) {
+                return $email['Address'];
+            }
+        }
+        return null;
     }
 
     /**
