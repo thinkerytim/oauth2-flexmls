@@ -2,14 +2,15 @@
 
 namespace ThinkeryTim\OAuth2\Client\Test\Provider;
 
+use PHPUnit\Framework\TestCase;
 use ThinkeryTim\OAuth2\Client\Provider\FlexMLS;
 use Mockery as m;
 
-class FlexmlsTest extends \PHPUnit_Framework_TestCase
+class FlexmlsTest extends TestCase
 {
     protected $provider;
 
-    protected function setUp()
+    protected function setUp() : void
     {
         $this->provider = new FlexMLS([
             'clientId' => 'mock_client_id',
