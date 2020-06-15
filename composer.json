@@ -1,0 +1,40 @@
+{
+  "name": "thinkerytim/oauth2-flexmls",
+  "description": "FlexMLS OAuth 2.0 support for the PHP League's OAuth 2.0 Client",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tim Kramer",
+      "email": "tim@thethinkery.net",
+      "homepage": "https://www.thethinkery.net"
+    }
+  ],
+  "keywords": [
+    "php",
+    "flexmls",
+    "reso",
+    "api",
+    "oauth",
+    "oauth2",
+    "client",
+    "authorization",
+    "authentication"
+  ],
+  "require": {
+    "league/oauth2-client": "^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "mockery/mockery": "~0.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "ThinkeryTim\\OAuth2\\Client\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ThinkeryTim\\OAuth2\\Client\\Test\\": "tests/src/"
+    }
+  }
+}
