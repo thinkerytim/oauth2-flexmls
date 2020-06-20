@@ -1,7 +1,11 @@
-# FlexMLS Provider for PHP League OAuth 2.0 Client
+# FlexMLS Spark Platform Provider for PHP League OAuth 2.0 Client
 ![PHP Composer](https://github.com/thinkerytim/oauth2-flexmls/workflows/PHP%20Composer/badge.svg)
 
 This package provides FlexMLS OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
+Users can authenticate against the FlexMLS Spark Platform (https://www.sparkplatform.com) and obtain a token for use with the Spark API or the
+FlexMLS RESO Web API.
+
+Using these tokens developers can create real estate applications for web, mobile or data replication.
 
 ## Installation
 
