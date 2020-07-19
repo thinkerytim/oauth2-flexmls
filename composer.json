@@ -18,7 +18,8 @@
     "oauth2",
     "client",
     "authorization",
-    "authentication"
+    "authentication",
+    "spark platform"
   ],
   "require": {
     "php": ">=7.2",
